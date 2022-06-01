@@ -7,7 +7,7 @@ module "app-dev" {
 }
 
 module "app-server" {
-   #source = "git@github.com/Mali0703/terraform-module.git//CHILD/EC2" 
-   source = "git::https://github.com/Mali0703/terraform-module.git//CHILD/EC2"
+  source = "git::https://github.com/Mali0703/terraform-module.git//CHILD/EC2"
+  subnet_id = module.app-vpc.private_subnet_id
 }
 
