@@ -1,4 +1,4 @@
-module "app-dev" {
+module "app-vpc" {
     source = "../../CHILD/VPC"
     vpc_cidr = "20.0.0.0/16"
     pub_cidr = "20.0.1.0/24"
@@ -8,6 +8,6 @@ module "app-dev" {
 
 module "app-server" {
   source = "git::https://github.com/Mali0703/terraform-module.git//CHILD/EC2"
-  subnet_id = module.app-vpc.private_subnet_id
+  subnet_id = module.app-vpc.public_subnet_id
 }
 
